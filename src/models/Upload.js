@@ -32,10 +32,11 @@ const uploadSchema = new mongoose.Schema({
       message: "{VALUE} is not supported. Valid options are WATER or GAS."
     },
     required: [true, "Measure type is required."]
-  }
+  },
+  has_confirmed: { type: Boolean },
+  image_url: { type: String }
 }, { versionKey: false });
 
-const upload = mongoose.model("leitura", uploadSchema);
-
+const upload = mongoose.model("leituras", uploadSchema);
 
 export default upload;
